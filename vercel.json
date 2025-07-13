@@ -1,10 +1,6 @@
 {
-  "redirects": [
-    {
-      "source": "/",
-      "has": [{ "type": "host", "value": "www.tshla.ai" }],
-      "destination": "https://tshla.ai",
-      "permanent": true
-    }
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/login", "destination": "/login.html" }
   ]
 }
