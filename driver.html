@@ -1,25 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Driver Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'DM Sans', sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
       margin: 0;
-      background: #f0f8ff;
+      padding: 2rem;
+      background-color: #f0f8ff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
+
     h1 {
       color: #023e8a;
+      margin-bottom: 2rem;
+    }
+
+    .form-section {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 500px;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    label {
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    input {
+      padding: 0.75rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 0.5rem;
+      width: 100%;
+    }
+
+    .calendar {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .start-btn {
+      padding: 0.75rem;
+      font-size: 1rem;
+      background-color: #0077b6;
+      color: white;
+      border: none;
+      border-radius: 9999px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+
+    .start-btn:hover {
+      background-color: #023e8a;
     }
   </style>
 </head>
 <body>
-  <h1>Welcome, Driver.</h1>
+  <h1>Welcome, Driver</h1>
+
+  <div class="form-section">
+    <div class="calendar">
+      <label for="date">Today's Date</label>
+      <input type="date" id="date" name="date">
+    </div>
+
+    <div>
+      <label for="name">Patient Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter patient name">
+    </div>
+
+    <div>
+      <label for="dob">Date of Birth</label>
+      <input type="date" id="dob" name="dob">
+    </div>
+
+    <div>
+      <label for="email">Patient Email</label>
+      <input type="email" id="email" name="email" placeholder="Enter patient email">
+    </div>
+
+    <button class="start-btn" onclick="startDictation()">Start Dictation</button>
+  </div>
+
+  <script>
+    // Set today's date automatically
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('date').value = today;
+
+    function startDictation() {
+      alert('Dictation started... (this will be connected to real logic soon)');
+      // TODO: Replace this with actual dictation logic / redirect
+    }
+  </script>
 </body>
 </html>
